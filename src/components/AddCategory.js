@@ -14,7 +14,7 @@ export const AddCategory = ({setCategory}) => {
         e.preventDefault();
         // console.log(e);
         if(inputValue.trim().length > 2){
-            setCategory( cats => [...cats, inputValue] );
+            setCategory( cats => [inputValue, ...cats ] );
             setInputValue('');
         }
     }

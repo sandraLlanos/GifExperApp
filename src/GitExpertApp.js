@@ -5,9 +5,9 @@ import { GifGrid } from './components/GifGrid'
 export const GitExpertApp = () => {
 // no de debe de usar como constante pues no podriamos cambiar el arreglo
 // para este caso se recomienda usar el hook useState
-    // const categories = ['One Push', 'Samurai X', 'Dragon Ball'];
+    // const categories = ['One Punch', 'Samurai X', 'Dragon Ball'];
 
-    const [categories, setCategories] = useState(['One Push'])
+    const [categories, setCategories] = useState(['One Punch'])
     // const handleAdd = () => {
         /**
          *  Esta es una mala practica ya que estamos afectando el arriglo directamente
