@@ -1,25 +1,28 @@
 import React, { useState } from 'react'
+import { AddCategory } from './components/AddCategory'
 
 export const GitExpertApp = () => {
 // no de debe de usar como constante pues no podriamos cambiar el arreglo
 // para este caso se recomienda usar el hook useState
     // const categories = ['One Push', 'Samurai X', 'Dragon Ball'];
 
-    const [Categories, setCategories] = useState(['One Push', 'Samurai X', 'Dragon Ball'])
-    const handleAdd = () => {
+    const [categories, setCategories] = useState(['One Push', 'Samurai X', 'Dragon Ball'])
+    // const handleAdd = () => {
         /**
          *  Esta es una mala practica ya que estamos afectando el arriglo directamente
          *  categories.push('HunterXHunter');
          * 
          */
-    // setCategories( [...Categories, 'HunterXHunter'] );
-    setCategories( cats => [...cats, 'HunterXHunter'] );
-    }
+    // setCategories( [...categories, 'HunterXHunter'] );
+    // setCategories( cats => [...cats, 'HunterXHunter'] );
+    // }
     return (
         <>
             <h2>GitExpertApp</h2>   
+            <AddCategory />
             <hr />
-            <button onClick={handleAdd}> Agregar </button>
+
+            {/* <button onClick={handleAdd}> Agregar </button> */}
 
             {/* { en este caso tendriamos todas las categorias en una linea
                 categories
@@ -35,7 +38,7 @@ export const GitExpertApp = () => {
             y a retornar el elemento que se necesita */}
             <ol>
                 { 
-                    Categories.map( category => {
+                    categories.map( category => {
                         return <li key={category}> {category} </li>
                     })
                 }
