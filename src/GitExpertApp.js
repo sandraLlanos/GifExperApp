@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { AddCategory } from './components/AddCategory'
+import { GifGrid } from './components/GifGrid'
 
 export const GitExpertApp = () => {
 // no de debe de usar como constante pues no podriamos cambiar el arreglo
 // para este caso se recomienda usar el hook useState
     // const categories = ['One Push', 'Samurai X', 'Dragon Ball'];
 
-    const [categories, setCategories] = useState(['One Push', 'Samurai X', 'Dragon Ball'])
+    const [categories, setCategories] = useState(['One Push'])
     // const handleAdd = () => {
         /**
          *  Esta es una mala practica ya que estamos afectando el arriglo directamente
@@ -38,9 +39,13 @@ export const GitExpertApp = () => {
             y a retornar el elemento que se necesita */}
             <ol>
                 { 
-                    categories.map( category => {
-                        return <li key={category}> {category} </li>
-                    })
+                    categories.map( category => (
+                        <GifGrid 
+                            key={category}
+                            category={ category }
+                        />
+                        // <li key={category}> {category} </li>
+                    ))
                 }
             </ol>
         </>
