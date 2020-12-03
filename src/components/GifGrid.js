@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
+// import React from 'react'
+// import { useFetchGifs } from '../hooks/useFetchGifs'
 import { GifGridItem } from './GifGridItem';
 import { getGifts } from '../helpers/getGifs';
 
 export const GifGrid = ({category}) => {
+
+    // const {data, loading} = useFetchGifs();
     const [images, setImages] = useState([]);
-    console.log(images);
+    // console.log(images);
     // const [count, setCount] = useState(0);
 
     // useEffect: nos permite ejecutar codigo de forma condicional
@@ -33,13 +37,14 @@ export const GifGrid = ({category}) => {
     //     console.log(gifs);  
     //     setImages(gifs);
     // }
-    // getGifts(); se solucione la recarga del componente con useEffects
+    // getGifts(); se soluciona la recarga del componente con useEffects
     return (
         <>
             <h3>{category}</h3>
+            {/* <p>{loading ? 'Cargando...' : 'Data cargada'}</p> */}
             <div className="card-grid">
-                {/* <h3>{count}</h3>
-                <button onClick={()=>setCount(count + 1)}>1</button>         */}
+                {/* {/* <h3>{count}</h3> */}
+                {/* <button onClick={()=>setCount(count + 1)}>1</button>         */} 
                     {
                         images.map( img => (
                             <GifGridItem
